@@ -1,7 +1,7 @@
 import React, { Component, createContext } from 'react';
 
 export const ThemeContext = createContext();
-// pag create han state han context
+
 class ThemeContextProvider extends Component {
     state = {
         isLightTheme: true,
@@ -9,15 +9,19 @@ class ThemeContextProvider extends Component {
         dark: { syntax: '#ddd', ui: '#333', bg: '#555' }
     };
 
+    toggleTheme = () => {
+        this.setState((prevState) => ({
+            isLightTheme: !prevState.isLightTheme
+        }));
+    };
+
     render() {
         return (
-            // pag call han context provider ha app.js
-            // an pag tawag han aadto sakon na children
-        <ThemeContext.Provider value={{ ...this.state }}> 
-            {this.props.children} 
-        </ThemeContext.Provider>
+            <ThemeContext.Provider value={{ ...this.state, toggleTheme: this.toggleTheme }}>
+                {this.props.children}
+            </ThemeContext.Provider>
         );
     }
-    }
+}
 
 export default ThemeContextProvider;
