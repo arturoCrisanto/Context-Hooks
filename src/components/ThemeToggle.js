@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { ThemeContext } from '../contexts/ThemeContext';
 
+//todo button component para pag call han dark or light mode
+
 class ThemeToggle extends Component {
     static contextType = ThemeContext
     render() { 

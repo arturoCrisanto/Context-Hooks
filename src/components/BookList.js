@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { ThemeContext } from '../contexts/ThemeContext';
 
+
+
+//todo --first approach para han context provider nagana la ine ha mga class component
+
 class BookList extends Component {
     static contextType =ThemeContext
     
